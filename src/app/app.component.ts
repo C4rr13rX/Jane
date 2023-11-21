@@ -21,6 +21,6 @@ export class AppComponent {
   ];
   public labels = [];
   constructor() {
-    addIcons({ chatbubblesOutline, colorPaletteOutline, paperPlaneOutline, bookOutline, codeSlashOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+    addIcons({ chatBubblesOutline, colorPaletteOutline, paperPlaneOutline, bookOutline, codeSlashOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
 }
