@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bookOutline, codeSlashOutline, colorPaletteOutline, chatbubblesOutline} from 'ionicons/icons';
+import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, colorPaletteOutline, colorPaletteSharp, chatbubblesOutline, chatbubblesSharp} from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +14,13 @@ import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutlin
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Chat', url: '/tasks/chat', icon: 'chatbubbles-outline' },
-    { title: 'Draw', url: '/tasks/draw', icon: 'color-palette-outline' },
-    { title: 'Make Books', url: '/tasks/make-books', icon: 'book-outline' },
-    { title: 'Write Software', url: '/tasks/write-software', icon: 'code-slash-outline' }
+    { title: 'Chat', url: '/tasks/chat', icon: 'chatbubbles' },
+    { title: 'Draw', url: '/tasks/draw', icon: 'color-palette' },
+    { title: 'Make Books', url: '/tasks/make-books', icon: 'book' },
+    { title: 'Write Software', url: '/tasks/write-software', icon: 'code-slash' }
   ];
   public labels = [];
   constructor() {
-    addIcons({ chatbubblesOutline, colorPaletteOutline, paperPlaneOutline, bookOutline, codeSlashOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+    addIcons({ chatbubblesOutline, chatbubblesSharp, colorPaletteOutline, colorPaletteSharp, paperPlaneOutline, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
 }
