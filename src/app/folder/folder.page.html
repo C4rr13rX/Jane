@@ -21,6 +21,7 @@
     <app-chat></app-chat>
   </ng-container>
   <ng-template #drawBlock>
+    Hello draw!
     <ng-container *ngIf="location === 'draw'; else makeBooksBlock">
       <app-draw></app-draw>
     </ng-container>
