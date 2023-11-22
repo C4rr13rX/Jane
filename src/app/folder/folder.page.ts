@@ -1,6 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { ChatComponent } from '../components/chat/chat.component';
+import { DrawComponent } from '../components/draw/draw.component';
+import { MakeBooksComponent } from '../components/make-books/make-books.component';
+import { WriteSoftwareComponent } from '../components/write-software/write-software.component';
 
 
 @Component({
