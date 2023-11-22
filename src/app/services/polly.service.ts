@@ -25,7 +25,7 @@ export class PollyService {
     const params: Polly.Types.SynthesizeSpeechInput = {
       OutputFormat: 'pcm',
       Text: text,
-      VoiceId: 'Joanna', // Change to 'Joanna' for the English (US) Danielle voice
+      VoiceId: 'Danielle', // Change to 'Joanna' for the English (US) Danielle voice
     };
 
     try {
