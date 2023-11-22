@@ -17,7 +17,7 @@ import { WriteSoftwareComponent } from '../components/write-software/write-softw
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, ChatComponent, DrawComponent, MakeBooksComponent, CommonModule]
+  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, ChatComponent, DrawComponent, MakeBooksComponent, WriteSoftwareComponent, CommonModule]
   
 })
 export class FolderPage implements OnInit {
