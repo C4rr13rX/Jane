@@ -1,3 +1,7 @@
+
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from '@ionic/angular/standalone';
@@ -12,7 +16,7 @@ import { WriteSoftwareComponent } from '../components/write-software/write-softw
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, ChatComponent, DrawComponent, MakeBooksComponent]
+  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, ChatComponent, DrawComponent, MakeBooksComponent, IonicModule, CommonModule, FormsModule]
   
 })
 export class FolderPage implements OnInit {
