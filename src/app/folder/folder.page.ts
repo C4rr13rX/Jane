@@ -33,7 +33,7 @@ export class FolderPage implements OnInit {
 
       // Mark for change detection
       this.cdr.markForCheck();
-      console.log(this.location)
+      alert(this.location)
     });
     
   }
