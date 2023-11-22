@@ -16,14 +16,10 @@
 
   <div id="container">
     
-    <ng-template *ngIf="location === 'chat'">
-      <app-chat></app-chat>
-    </ng-template>
-    
+    <app-chat [ngClass]="{ 'hidden-component': location !== 'chat' }"></app-chat>
+    <app-draw [ngClass]="{ 'hidden-component': location !== 'draw' }"></app-draw>
+<!-- Add similar lines for other components -->
 
-    <app-draw></app-draw>
-  
-    <app-make-books></app-make-books>
   
 
  
