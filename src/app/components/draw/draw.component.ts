@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-draw',
   templateUrl: './draw.component.html',
   styleUrls: ['./draw.component.scss'],
+  standalone: true
 })
 export class DrawComponent  implements OnInit {
 
