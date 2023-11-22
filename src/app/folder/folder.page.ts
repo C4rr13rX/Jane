@@ -17,7 +17,7 @@ export class FolderPage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.folder = FolderPage.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
+    this.folder = this.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
   }
   
   static replaceDashesAndCapitalize(inputString: string): string {
