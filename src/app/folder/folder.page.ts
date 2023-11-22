@@ -17,6 +17,16 @@ export class FolderPage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    this.folder = replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
+  }
+  
+  static replaceDashesAndCapitalize(inputString: string): string {
+    // Replace dashes with spaces
+    const stringWithSpaces = inputString.replace(/-/g, ' ');
+
+    // Capitalize the first letter of every word
+    const capitalizedString = stringWithSpaces.replace(/\b\w/g, (match) => match.toUpperCase());
+
+    return capitalizedString;
   }
 }
