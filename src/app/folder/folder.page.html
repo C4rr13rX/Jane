@@ -15,7 +15,22 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ng-container *ngIf="location === 'chat'; else drawBlock">
+    <app-chat></app-chat>
+  </ng-container>
+  <ng-template #drawBlock>
+    <ng-container *ngIf="location === 'draw'; else makeBooksBlock">
+      <app-draw></app-draw>
+    </ng-container>
+  </ng-template>
+  <ng-template #makeBooksBlock>
+    <ng-container *ngIf="location === 'make-books'; else writeSoftwareBlock">
+      <app-make-books></app-make-books>
+    </ng-container>
+  </ng-template>
+  <ng-template #writeSoftwareBlock>
+    <app-write-software></app-write-software>
+  </ng-template>
+</div>
+
 </ion-content>
