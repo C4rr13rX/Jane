@@ -20,7 +20,7 @@ export class FolderPage implements OnInit {
     this.folder = this.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
   }
   
-  static replaceDashesAndCapitalize(inputString: string): string {
+  replaceDashesAndCapitalize(inputString: string): string {
     // Replace dashes with spaces
     const stringWithSpaces = inputString.replace(/-/g, ' ');
 
