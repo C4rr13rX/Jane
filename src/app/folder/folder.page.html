@@ -18,8 +18,11 @@
   </ion-header>
 
   <div id="container">
+    <ng-container *ngIf="isTrue">
+      
+      <app-chat></app-chat>
+    </ng-container>
     
-    <app-chat></app-chat>
     
   </div>
 
