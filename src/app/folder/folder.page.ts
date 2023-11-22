@@ -13,11 +13,14 @@ import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent 
 })
 export class FolderPage implements OnInit {
   public folder!: string;
+  public location!: string;
   private activatedRoute = inject(ActivatedRoute);
   constructor() {}
 
   ngOnInit() {
     this.folder = this.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
+    this.location = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    
   }
   
   replaceDashesAndCapitalize(inputString: string): string {
