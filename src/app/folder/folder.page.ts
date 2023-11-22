@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { ChatComponent } from '../components/chat/chat.component';
@@ -19,11 +19,21 @@ export class FolderPage implements OnInit {
   public folder!: string;
   public location!: string;
   private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef ) {}
 
   ngOnInit() {
     this.folder = this.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
-    this.location = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    
+    this.activatedRoute.paramMap.subscribe(paramMap => {
+      // Get the 'id' parameter from the route
+      const newLocation = paramMap.get('id') as string;
+
+      // Update the location variable
+      this.location = newLocation;
+
+      // Mark for change detection
+      this.cdr.markForCheck();
+    });
     
   }
   
