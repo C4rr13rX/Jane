@@ -16,8 +16,10 @@
 
   <div id="container">
     
+    <ng-template *ngIf="location === 'chat'">
+      <app-chat></app-chat>
+    </ng-template>
     
-    < *ngIf="location === 'chat'" app-chat></app-chat>
 
     <app-draw></app-draw>
   
