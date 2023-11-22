@@ -15,6 +15,7 @@
   </ion-header>
 
   <div id="container">
+    {{location}}
   <ng-container *ngIf="location === 'chat'; else drawBlock">
     Hello world!
     <app-chat></app-chat>
