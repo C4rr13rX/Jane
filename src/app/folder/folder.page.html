@@ -23,6 +23,20 @@
         <app-chat></app-chat>
       </ng-container>
       
+      <ng-container *ngIf="location === 'draw'">
+        <app-draw></app-draw>
+      </ng-container>
+      
+      <ng-container *ngIf="location === 'make-books'">
+        <app-make-books></app-make-books>
+      </ng-container>
+      
+      <ng-container *ngIf="location === 'write-software'">
+        <app-write-software></app-write-software>
+      </ng-container>
+      
+      
+      
    
   
     
