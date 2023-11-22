@@ -14,11 +14,11 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    
-    <app-chat [ngClass]="{ 'hidden-component': location !== 'chat' }"></app-chat>
-    <app-draw [ngClass]="{ 'hidden-component': location !== 'draw' }"></app-draw>
+  <div id="container"><app-chat [ngStyle]="{ 'display': location === 'chat' ? 'block' : 'none' }"></app-chat>
+<app-draw [ngStyle]="{ 'display': location === 'draw' ? 'block' : 'none' }"></app-draw>
 <!-- Add similar lines for other components -->
+
+    
 
   
 
