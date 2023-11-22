@@ -15,25 +15,26 @@
   </ion-header>
 
   <div id="container">
-    {{location}}
-  <ng-container *ngIf="location === 'chat'; else drawBlock">
+  {{ location }}
+
+  <div *ngIf="location === 'chat'">
     Hello world!
     <app-chat></app-chat>
-  </ng-container>
-  <ng-template #drawBlock>
+  </div>
+
+  <div *ngIf="location === 'draw'">
     Hello draw!
-    <ng-container *ngIf="location === 'draw'; else makeBooksBlock">
-      <app-draw></app-draw>
-    </ng-container>
-  </ng-template>
-  <ng-template #makeBooksBlock>
-    <ng-container *ngIf="location === 'make-books'; else writeSoftwareBlock">
-      <app-make-books></app-make-books>
-    </ng-container>
-  </ng-template>
-  <ng-template #writeSoftwareBlock>
+    <app-draw></app-draw>
+  </div>
+
+  <div *ngIf="location === 'make-books'">
+    <app-make-books></app-make-books>
+  </div>
+
+  <div *ngIf="location === 'write-software'">
     
-  </ng-template>
+  </div>
 </div>
+
 
 </ion-content>
