@@ -25,5 +25,4 @@ private apiKey = 'YOUR_OPENAI_API_KEY'; // Replace with your OpenAI GPT API key
       console.error('Error sending message to ChatGPT-4:', error.message);
       throw error;
     }
-  
 }
