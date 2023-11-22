@@ -18,6 +18,7 @@ import { WriteSoftwareComponent } from '../components/write-software/write-softw
 export class FolderPage implements OnInit {
   public folder!: string;
   public location!: string;
+  public isTrue = true;
   private activatedRoute = inject(ActivatedRoute);
   constructor(private cdr: ChangeDetectorRef ) {}
 
