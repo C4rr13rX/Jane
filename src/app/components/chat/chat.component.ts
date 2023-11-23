@@ -6,7 +6,7 @@ import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonN
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
   standalone: true,
-  imoorts: [IonFooter, IonTextarea]
+  imports: [IonFooter, IonTextarea]
 })
 export class ChatComponent  implements OnInit {
 
