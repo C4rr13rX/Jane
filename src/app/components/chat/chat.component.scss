@@ -1,0 +1,23 @@
+ /* CSS for the animated block */
+  .animated-block {
+    width: 100px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    background-color: #3498db; /* Example background color */
+    animation-name: pulse; /* Name of the animation */
+    animation-duration: 1s; /* Initial duration, will be updated dynamically */
+    animation-iteration-count: infinite;
+  }
+
+  /* Example pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
