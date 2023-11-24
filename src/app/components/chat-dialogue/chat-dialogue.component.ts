@@ -15,6 +15,7 @@ export class ChatDialogueComponent  implements OnInit {
   copyText() {
     const textToCopy = this.dialogue.el.textContent; // Get the text content from the dialogue-container
     // Implement logic to copy the text (e.g., use Clipboard API)
+    alert(textToCopy)
   }
 
   constructor() { }
