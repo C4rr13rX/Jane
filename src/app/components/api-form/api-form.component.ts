@@ -13,11 +13,21 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } 
   imports[FormsModule, ReactiveFormsModule]
 })
 export class ApiFormComponent  implements OnInit {
+  
+  apiForm: FormGroup;
 
-  constructor() { 
+  constructor(private fb: FormBuilder) { 
     addIcons({ chatbubblesOutline, chatbubblesSharp, colorPaletteOutline, colorPaletteSharp, paperPlaneOutline, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.apiForm = this.fb.group({
+      aws_access_key: ['', [Validators.required, Validators.minLength(3)]],
+      aws_secret: ['', [Validators.required, Validators.email]],
+      aws_region: ['', [Validators.required, Validators.minLength(6)]],
+      open_ai_api_key: ['', [Validators.required, Validators.minLength(6)]],
+    });
+    
+  }
 
 }
