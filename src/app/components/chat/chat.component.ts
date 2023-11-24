@@ -22,9 +22,7 @@ export class ChatComponent implements OnInit {
       component: ChatDialogueComponent, // Create a separate component for the popover content
       cssClass: 'dialogue-popover',
       translucent: true,
-      popoverOptions: {
-        position: 'top'
-      }
+      side: 'top'
     });
 
     return await popover.present();
