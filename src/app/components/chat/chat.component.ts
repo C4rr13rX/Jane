@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonTextarea, IonButton} from '@ionic/angular/standalone';
 
 @Component({
@@ -8,8 +8,8 @@ import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonN
   standalone: true,
   imports: [IonContent, IonFooter, IonTextarea, IonButton]
 })
-export class ChatComponent  implements OnInit {
-  dialogue!;
+export class ChatComponent  implements OnInit { 
+  @ViewChild('dialogue') dialogue: ElementRef;
   constructor() { }
 
   ngOnInit() {
