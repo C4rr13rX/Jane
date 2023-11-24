@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';i
+import { Component, OnInit } from '@angular/core';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonTextarea, IonButton} from '@ionic/angular/standalone';
 
 @Component({
