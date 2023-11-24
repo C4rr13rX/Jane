@@ -20,7 +20,6 @@ export class ChatComponent implements OnInit {
   async openDialogue() {
     const popover = await this.popoverController.create({
       component: ChatDialogueComponent, // Create a separate component for the popover content
-      cssClass: 'dialogue-popover',
       translucent: true,
       side: 'top'
     });
