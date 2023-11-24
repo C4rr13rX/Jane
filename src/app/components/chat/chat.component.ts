@@ -73,4 +73,3 @@ export class ChatComponent  implements OnInit {
     `,
   ],
 })
-export class DialoguePopoverComponent {}
