@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonTextarea, IonButton} from '@ionic/angular/standalone';
-import { ChatDialogueComponent } from '../chat-dialogue/chat-dialogue.component'
-import { PopoverController } from '@ionic/angular';
+import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonTextarea, IonButton, PopoverController} from '@ionic/angular/standalone';
+import { ChatDialogueComponent } from '../chat-dialogue/chat-dialogue.component';
 
 @Component({
   selector: 'app-chat',
