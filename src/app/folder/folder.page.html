@@ -13,17 +13,17 @@
         <app-chat></app-chat>
       </ng-container>
       
-      <ng-template *ngIf="location === 'draw'">
+      <ng-container *ngIf="location === 'draw'">
         <app-draw></app-draw>
-      </ng-template>
+      </ng-container>
       
-      <ng-template *ngIf="location === 'make-books'">
+      <ng-container *ngIf="location === 'make-books'">
         <app-make-books></app-make-books>
-      </ng-template>
+      </ng-container>
       
-      <ng-template *ngIf="location === 'write-software'">
+      <ng-container *ngIf="location === 'write-software'">
         <app-write-software></app-write-software>
-      </ng-template>
+      </ng-container>
       
       
   
