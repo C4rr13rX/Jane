@@ -4,7 +4,7 @@
   height: 100px; /* Set height equal to width for a round shape */
   background-color: #3498db; /* Example background color */
   border-radius: 50%; /* Make it round */
-  animation-name: breathe, happy; /* Add the happy animation */
+  animation-name: breathe; /* Add the happy animation */
   animation-duration: 2s, 0.5s; /* Adjust durations for breathing and happy animations */
   animation-iteration-count: infinite;
 }
