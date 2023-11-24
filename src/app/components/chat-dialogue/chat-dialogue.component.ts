@@ -10,7 +10,7 @@ import { IonContent, IonButton, IonIcon, IonFooter } from '@ionic/angular/standa
 })
 export class ChatDialogueComponent  implements OnInit {
   
-  @ViewChild('dialogue', { static: false }) dialogue: ElementRef;
+  @ViewChild('dialogue', { static: false }) dialogue!: ElementRef;
 
   copyText() {
     const textToCopy = this.dialogue.nativeElement.textContent; // Get the text content from the dialogue-container
