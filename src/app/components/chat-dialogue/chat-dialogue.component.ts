@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { IonContent, IonButton, IonIcon, IonFooter } from '@ionic/angular/standalone'; 
+import { IonContent, IonButton, IonIcon, IonFooter } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, colorPaletteOutline, colorPaletteSharp, chatbubblesOutline, chatbubblesSharp} from 'ionicons/icons';
 
 @Component({
   selector: 'app-chat-dialogue',
