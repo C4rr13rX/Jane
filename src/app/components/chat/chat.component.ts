@@ -11,14 +11,12 @@ import { DialoguePopoverComponent } from "../../dialogue-popover/dialogue-popove
   standalone: true,
   imports: [IonContent, IonFooter, IonTextarea, IonButton]
 })
-export class ChatComponent  implements OnInit { 
+export class ChatComponent  implements OnInit {
   
   constructor(private popoverController: PopoverController) {}
 
   ngOnInit() {
-    
    // this.presentDialoguePopover();
-    
   }
   
   async presentDialoguePopover() {
