@@ -9,6 +9,10 @@
 
 
 
+     < <ng-container *ngIf="location === 'chat'">
+        <app-chat></app-chat>
+       
+      </ng-container>
       
       <ng-container *ngIf="location === 'draw'">
         <app-draw></app-draw>
