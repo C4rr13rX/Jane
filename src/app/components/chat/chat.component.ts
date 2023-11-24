@@ -17,18 +17,9 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     
-     this.presentDialoguePopover();
+    // this.presentDialoguePopover();
     
   }
   
-  async presentDialoguePopover() {
-    
-    const popover = await this.popoverController.create({
-      component: DialoguePopoverComponent, // Create a separate component for the popover content
-      cssClass: 'dialogue-popover',
-      translucent: true,
-    });
-    return await popover.present();
-  }
- 
+  
 }
