@@ -14,6 +14,10 @@ export class ChatComponent implements OnInit {
   constructor(private popoverController: PopoverController) {}
 
   ngOnInit() {
+    
+  }
+  
+  send() {
     this.openDialogue();
   }
   
