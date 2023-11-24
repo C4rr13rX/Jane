@@ -11,7 +11,7 @@ import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonN
 })
 export class ChatComponent  implements OnInit { 
   @ViewChild('dialogue') dialogue!: ElementRef;
-  constructor() { }
+  constructor(private popoverController: PopoverController) {}
 
   ngOnInit() {
     
