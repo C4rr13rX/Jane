@@ -13,5 +13,9 @@ export class ChatDialogueComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+  
+  copyText() {
+    
+  }
 
 }
