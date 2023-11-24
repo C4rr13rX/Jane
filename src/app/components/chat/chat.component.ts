@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonTextarea, IonButton} from '@ionic/angular/standalone';
 
-import DialoguePopoverComponent from "../dialogue-popover/dialogue-popover.component"
+import DialoguePopoverComponent from "../dialogue-popover/dialogue-popover.component";
 
 @Component({
   selector: 'app-chat',
