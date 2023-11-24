@@ -24,3 +24,12 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.dialogue-popover {
+  --width: 100%;
+  --height: 33vh; /* Adjust the height as needed */
+  --top: 0;
+  --left: 0;
+  --background: transparent; /* Set the background color to be transparent */
+  --box-shadow: none; /* Remove box-shadow if not needed */
+}
