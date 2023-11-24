@@ -52,24 +52,3 @@ export class ChatComponent  implements OnInit {
   }
 
 }
-
-@Component({
-  selector: 'app-dialogue-popover',
-  template: `
-    
-      <div class="dialogue-container">
-        <!-- Dialogue content will be dynamically added here -->
-      </div>
-  
-  `,
-  styles: [
-    `
-      .dialogue-container {
-        max-height: 33vh; /* Adjust the max-height as needed */
-        overflow-y: auto;
-        padding: 10px;
-        background-color: transparent; /* Set the background color to be transparent */
-      }
-    `,
-  ],
-})
