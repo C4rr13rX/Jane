@@ -1,1 +1,12 @@
-<div class="dialogue-container"></div>
+<ion-content>
+  <div class="dialogue-container" #dialogue>
+    <!-- Dialogue content will be dynamically added here -->
+  </div>
+</ion-content>
+
+<ion-footer>
+  <!-- Add a button with (click) event binding to trigger the copyText method -->
+  <ion-button expand="full" fill="clear" (click)="copyText()">
+    <ion-icon name="copy-outline"></ion-icon>
+  </ion-button>
+</ion-footer>
