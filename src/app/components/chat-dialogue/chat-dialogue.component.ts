@@ -13,7 +13,7 @@ export class ChatDialogueComponent  implements OnInit {
   @ViewChild('dialogue', { static: false }) dialogue: ElementRef;
 
   copyText() {
-    const textToCopy = this.dialogue.el.textContent; // Get the text content from the dialogue-container
+    const textToCopy = this.dialogue.nativeElement.textContent; // Get the text content from the dialogue-container
     // Implement logic to copy the text (e.g., use Clipboard API)
     alert(textToCopy)
   }
