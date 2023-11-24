@@ -15,7 +15,7 @@ export class ChatComponent  implements OnInit {
 
   ngOnInit() {
     
-    this.showDialogue();
+    this.presentDialoguePopover();
     
   }
   
