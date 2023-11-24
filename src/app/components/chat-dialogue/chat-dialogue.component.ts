@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { IonContent, IonButton, IonIcon, IonFooter } from '@ionic/angular/standalone'; 
 
 @Component({
@@ -10,7 +10,7 @@ import { IonContent, IonButton, IonIcon, IonFooter } from '@ionic/angular/standa
 })
 export class ChatDialogueComponent  implements OnInit {
   
-  @ViewChild('dialogue', { static: false }) dialogue: IonContent;
+  @ViewChild('dialogue', { static: false }) dialogue: ElementRe;
 
   copyText() {
     const textToCopy = this.dialogue.el.textContent; // Get the text content from the dialogue-container
