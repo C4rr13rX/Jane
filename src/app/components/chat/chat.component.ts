@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonTextarea, IonButton} from '@ionic/angular/standalone';
 
@@ -11,24 +11,24 @@ import { DialoguePopoverComponent } from "../../dialogue-popover/dialogue-popove
   standalone: true,
   imports: [IonContent, IonFooter, IonTextarea, IonButton]
 })
-export class ChatComponent  implements OnInit {
+export class ChatComponent implements OnInit {
   
   constructor(private popoverController: PopoverController) {}
 
   ngOnInit() {
-   this.presentDialoguePopover();
+    
+     this.presentDialoguePopover();
+    
   }
   
   async presentDialoguePopover() {
+    
     const popover = await this.popoverController.create({
       component: DialoguePopoverComponent, // Create a separate component for the popover content
       cssClass: 'dialogue-popover',
       translucent: true,
     });
-
     return await popover.present();
   }
-  
-  
-
+ 
 }
