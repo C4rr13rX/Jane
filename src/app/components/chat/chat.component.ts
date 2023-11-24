@@ -19,6 +19,16 @@ export class ChatComponent  implements OnInit {
     
   }
   
+  async presentDialoguePopover() {
+    const popover = await this.popoverController.create({
+      component: DialoguePopoverComponent, // Create a separate component for the popover content
+      cssClass: 'dialogue-popover',
+      translucent: true,
+    });
+
+    return await popover.present();
+  }
+  
   showDialogue() {
     // Replace this with your actual dialogue content
     const messages = [
@@ -42,3 +52,25 @@ export class ChatComponent  implements OnInit {
   }
 
 }
+
+@Component({
+  selector: 'app-dialogue-popover',
+  template: `
+    <ion-content>
+      <div class="dialogue-container">
+        <!-- Dialogue content will be dynamically added here -->
+      </div>
+    </ion-content>
+  `,
+  styles: [
+    `
+      .dialogue-container {
+        max-height: 33vh; /* Adjust the max-height as needed */
+        overflow-y: auto;
+        padding: 10px;
+        background-color: transparent; /* Set the background color to be transparent */
+      }
+    `,
+  ],
+})
+export class DialoguePopoverComponent {}
