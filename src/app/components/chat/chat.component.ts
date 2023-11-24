@@ -9,7 +9,7 @@ import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonN
   imports: [IonContent, IonFooter, IonTextarea, IonButton]
 })
 export class ChatComponent  implements OnInit {
-  public dialogue!;
+  dialogue!;
   constructor() { }
 
   ngOnInit() {
