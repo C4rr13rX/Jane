@@ -29,26 +29,6 @@ export class ChatComponent  implements OnInit {
     return await popover.present();
   }
   
-  showDialogue() {
-    // Replace this with your actual dialogue content
-    const messages = [
-      'Hello there!',
-      'How can I assist you today?',
-      'Feel free to ask me anything!',
-    ];
-
-    // Interval to simulate scrolling messages
-    const interval = setInterval(() => {
-      const currentContent = this.dialogue.nativeElement.innerHTML;
-      const nextMessage = messages.shift();
-
-      if (nextMessage) {
-        this.dialogue.nativeElement.innerHTML = `${currentContent}<br>${nextMessage}`;
-        this.dialogue.nativeElement.scrollTop = this.dialogue.nativeElement.scrollHeight;
-      } else {
-        clearInterval(interval);
-      }
-    }, 2000); // Adjust the interval as needed
-  }
+  
 
 }
