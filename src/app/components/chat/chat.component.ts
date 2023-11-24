@@ -56,11 +56,11 @@ export class ChatComponent  implements OnInit {
 @Component({
   selector: 'app-dialogue-popover',
   template: `
-    <ion-content>
+    
       <div class="dialogue-container">
         <!-- Dialogue content will be dynamically added here -->
       </div>
-    </ion-content>
+  
   `,
   styles: [
     `
