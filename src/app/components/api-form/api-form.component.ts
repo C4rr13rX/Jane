@@ -46,3 +46,13 @@ export class ApiFormComponent  implements OnInit {
   get open_ai_api_key() {
     return this.apiForm.get('open_ai_api_key');
   }
+  
+  onSubmit() {
+    if (this.apiForm.valid) {
+      // Do something with the form data
+      console.log('Form submitted:', this.apiForm.value);
+    }
+  }
+
+
+}
