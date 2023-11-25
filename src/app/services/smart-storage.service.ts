@@ -8,7 +8,7 @@ import * as moment from 'moment';
 })
 export class SmartStorageService {
   private s3: AWS.S3;
-  private bucketName = 'your-s3-bucket-name';
+  private bucketName = 'JaneSays';
 
   constructor() {
     this.s3 = new AWS.S3();
@@ -22,7 +22,7 @@ export class SmartStorageService {
   private extractBaseKey(timestampedKey: string): string {
     return timestampedKey.split('_')[0];
   }
-
+  
   async syncWithS3(): Promise<void> {
     const s3Objects = await this.listS3Objects();
 
