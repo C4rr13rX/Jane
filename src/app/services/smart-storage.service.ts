@@ -24,11 +24,39 @@ export class SmartStorageService {
   }
 
   async syncWithS3(): Promise<void> {
-    // Implement logic to compare local storage with S3
-    // Retrieve the list of objects from the S3 bucket
-    // Compare timestamps and sync accordingly
-    // Update local storage as needed
+    const s3Objects = await this.listS3Objects();
+
+    // Loop through S3 objects and sync with local storage
+    for (const s3Object of s3Objects) {
+      const localTimestampedKey = localStorage.getItem(s3Object.Key);
+
+      // If the object is not found locally or the S3 version is newer, sync it
+      if (!localTimestampedKey || this.isS3VersionNewer(localTimestampedKey, s3Object.LastModified)) {
+        const s3Data = await this.s3.getObject({ Bucket: this.bucketName, Key: s3Object.Key }).promise();
+        localStorage.setItem(s3Object.Key, s3Data.Body as string);
+      }
+    }
+
+    // Loop through local storage and check for objects that exist in local but not in S3
+    for (let i = 0; i < localStorage.length; i++) {
+      const localKey = localStorage.key(i);
+      if (!s3Objects.find(s3Object => s3Object.Key === localKey)) {
+        // Object is in local storage but not in S3, delete it locally
+        localStorage.removeItem(localKey);
+      }
+    }
   }
+
+  private async listS3Objects(): Promise<AWS.S3.ObjectList> {
+    const s3ListObjectsResponse = await this.s3.listObjects({ Bucket: this.bucketName }).promise();
+    return s3ListObjectsResponse.Contents || [];
+  }
+
+  private isS3VersionNewer(localTimestampedKey: string, s3LastModified: Date): boolean {
+    const localTimestamp = parseInt(localTimestampedKey.split('_')[1], 10);
+    return moment(s3LastModified).unix() > localTimestamp;
+  }
+
 
   async saveObjectLocallyAndRemotely(key: string, data: any): Promise<void> {
     const timestampedKey = this.generateTimestampedKey(key);
