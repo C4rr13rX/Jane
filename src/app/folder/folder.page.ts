@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, PopoverController} from '@ionic/angular/standalone';
 import { ChatComponent } from '../components/chat/chat.component';
 import { DrawComponent } from '../components/draw/draw.component';
 import { MakeBooksComponent } from '../components/make-books/make-books.component';
@@ -24,7 +24,7 @@ export class FolderPage implements OnInit {
   public location!: string;
   public isTrue = true;
   private activatedRoute = inject(ActivatedRoute);
-  constructor(private cdr: ChangeDetectorRef ) {}
+  constructor(private popoverController: PopoverController, private cdr: ChangeDetectorRef ) {}
 
   ngOnInit() {
     this.folder = this.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
