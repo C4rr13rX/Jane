@@ -9,7 +9,7 @@ import { ChatComponent } from '../components/chat/chat.component';
 import { DrawComponent } from '../components/draw/draw.component';
 import { MakeBooksComponent } from '../components/make-books/make-books.component';
 import { WriteSoftwareComponent } from '../components/write-software/write-software.component';
-
+import { ApiFormComponent } from '../components/api-form/api-form.component';
 
 @Component({
   selector: 'app-folder',
@@ -51,5 +51,20 @@ export class FolderPage implements OnInit {
     const capitalizedString = stringWithSpaces.replace(/\b\w/g, (match) => match.toUpperCase());
 
     return capitalizedString;
+  }
+  
+  async presentAPIFormPopover() {
+    const popover = await this.popoverController.create({
+      component: ApiFormComponent,
+      translucent: true,
+      cssClass: 'api-form-popover',
+      // Use popoverOptions for positioning
+      popoverOptions: {
+        mode: 'ios', // Adjust mode as needed
+        position: 'top',
+      },
+    });
+
+    return await popover.present();
   }
 }
