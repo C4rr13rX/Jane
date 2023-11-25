@@ -50,7 +50,7 @@ export class ApiFormComponent  implements OnInit {
   onSubmit() {
     if (this.apiForm.valid) {
       // Do something with the form data
-      console.log('Form submitted:', this.apiForm.value);
+      alert('Form submitted:' + this.apiForm.value);
     }
   }
 
