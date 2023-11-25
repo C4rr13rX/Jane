@@ -29,5 +29,20 @@ export class ApiFormComponent  implements OnInit {
     });
     
   }
+  
+  // Access form controls in the template easily
+  get aws_access_key() {
+    return this.apiForm.get('aws_access_key');
+  }
+  
+  get aws_secret() {
+    return this.apiForm.get('aws_secret');
+  }
+  
+  get aws_region() {
+    return this.apiForm.get('aws_region');
+  }
 
-}
+  get open_ai_api_key() {
+    return this.apiForm.get('open_ai_api_key');
+  }
