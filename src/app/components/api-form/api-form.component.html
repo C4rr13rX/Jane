@@ -17,6 +17,12 @@
   <div *ngIf="aws_region.invalid && (aws_region.dirty || aws_region.touched)">
     <div *ngIf="aws_region.errors.required">AWS Region is required.</div>
   </div>
+  
+  <label for="open_ai_api_key">AWS Region:</label>
+  <input type="open_ai_api_key" id="open_ai_api_key" formControlName="open_ai_api_key">
+  <div *ngIf="open_ai_api_key.invalid && (open_ai_api_key.dirty || open_ai_api_key.touched)">
+    <div *ngIf="open_ai_api_key.errors.required">Open AI API Key is required.</div>
+  </div>
 
   <button type="submit" [disabled]="myForm.invalid">Submit</button>
 </form>
