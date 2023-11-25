@@ -1,3 +1,22 @@
-<p>
-  api-form works!
-</p>
+<form [formGroup]="apiForm" (ngSubmit)="onSubmit()">
+  <label for="aws_access_key">AWS Access Key:</label>
+  <input type="text" id="aws_access_key" formControlName="aws_access_key">
+  <div *ngIf="aws_access_key.invalid && (aws_access_key.dirty || aws_access_key.touched)">
+    <div *ngIf="aws_access_key.errors.required">AWS Access Key is required.</div>
+    
+  </div>
+
+  <label for="aws_secret">AWS Secret:</label>
+  <input type="aws_secret" id="aws_secret" formControlName="aws_secret">
+  <div *ngIf="aws_secret.invalid && (aws_secret.dirty || aws_secret.touched)">
+    <div *ngIf="aws_secret.errors.required">AWS Secret is required.</div>
+  </div>
+
+  <label for="aws_region">AWS Region:</label>
+  <input type="aws_region" id="aws_region" formControlName="aws_region">
+  <div *ngIf="aws_region.invalid && (aws_region.dirty || aws_region.touched)">
+    <div *ngIf="aws_region.errors.required">AWS Region is required.</div>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
