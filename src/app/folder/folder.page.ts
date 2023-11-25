@@ -58,11 +58,8 @@ export class FolderPage implements OnInit {
       component: ApiFormComponent,
       translucent: true,
       cssClass: 'api-form-popover',
-      // Use popoverOptions for positioning
-      popoverOptions: {
-        mode: 'ios', // Adjust mode as needed
-        position: 'top',
-      },
+      side: 'top'
+      
     });
 
     return await popover.present();
