@@ -22,10 +22,10 @@ export class ApiFormComponent  implements OnInit {
 
   ngOnInit() {
     this.apiForm = this.fb.group({
-      aws_access_key: ['', [Validators.required, Validators.minLength(3)]],
-      aws_secret: ['', [Validators.required, Validators.email]],
-      aws_region: ['', [Validators.required, Validators.minLength(6)]],
-      open_ai_api_key: ['', [Validators.required, Validators.minLength(6)]],
+      aws_access_key: ['', [Validators.required]],
+      aws_secret: ['', [Validators.required]],
+      aws_region: ['', [Validators.required]],
+      open_ai_api_key: ['', [Validators.required]],
     });
     
   }
