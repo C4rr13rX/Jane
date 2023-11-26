@@ -19,17 +19,19 @@ export class CredentialsService {
     localStorage.setItem('openaiApiKey', encryptedApiKey);
   }
   
-  getCredentials(): { awsAccessKey: string, awsSecret: string, awsRegion: string, openaiApiKey: string } | null {
+  getCredentials(): { awsAccessKey: string, awsSecret: string, awsRegion: string, openAIApiKey: string } | null {
     const encryptedAwsAccessKey = localStorage.getItem('awsAccessKey');
     const encryptedAwsSecret = localStorage.getItem('awsSecret');
     const encryptedAwsRegion = localStorage.getItem('awsRegion')
     const encryptedOpenAIApiKey = localStorage.getItem('openAIApiKey');
 
-    if (username && encryptedPassword && encryptedApiKey) {
-      const password = this.decrypt(encryptedPassword);
-      const openaiApiKey = this.decrypt(encryptedApiKey);
-
-      return { username, password, openaiApiKey };
+    if (encryptedAwsAccessKey && encryptedAwsSecret && encryptedAwsRegion && encryptedOpenAIApiKey ) {
+      const awsAccessKey = this.decrypt(encryptedAwsAccessKey);
+      const awsSecret = this.decrypt(encryptedAwsSecret)
+      const awsRegion = this.decrypt(encrypted AwsRegion)
+      const openAIApiKey = this.decrypt(encryptedOpenAIApiKey);
+      
+      return { awsAccessKey: awsAccessKey, awsSecret: awsSecret, awsRegion: awsRegion, openAIApiKey: openAIApiKey };
     }
 
     return null;
