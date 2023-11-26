@@ -1,28 +1,35 @@
 <form [formGroup]="apiForm" (ngSubmit)="onSubmit()">
-  <label for="aws_access_key">AWS Access Key:</label>
-  <input type="text" id="aws_access_key" formControlName="aws_access_key">
+  <ion-item>
+    <ion-label position="floating">AWS Access Key:</ion-label>
+    <ion-input type="text" formControlName="aws_access_key"></ion-input>
+  </ion-item>
   <div *ngIf="aws_access_key.invalid && (aws_access_key.dirty || aws_access_key.touched)">
-    <div *ngIf="aws_access_key.errors.required">AWS Access Key is required.</div>
-    
+    <div *ngIf="aws_access_key.errors?.required">AWS Access Key is required.</div>
   </div>
 
-  <label for="aws_secret">AWS Secret:</label>
-  <input type="aws_secret" id="aws_secret" formControlName="aws_secret">
+  <ion-item>
+    <ion-label position="floating">AWS Secret:</ion-label>
+    <ion-input type="password" formControlName="aws_secret"></ion-input>
+  </ion-item>
   <div *ngIf="aws_secret.invalid && (aws_secret.dirty || aws_secret.touched)">
-    <div *ngIf="aws_secret.errors.required">AWS Secret is required.</div>
+    <div *ngIf="aws_secret.errors?.required">AWS Secret is required.</div>
   </div>
 
-  <label for="aws_region">AWS Region:</label>
-  <input type="aws_region" id="aws_region" formControlName="aws_region">
+  <ion-item>
+    <ion-label position="floating">AWS Region:</ion-label>
+    <ion-input type="text" formControlName="aws_region"></ion-input>
+  </ion-item>
   <div *ngIf="aws_region.invalid && (aws_region.dirty || aws_region.touched)">
-    <div *ngIf="aws_region.errors.required">AWS Region is required.</div>
-  </div>
-  
-  <label for="open_ai_api_key">OpenAI API Key:</label>
-  <input type="open_ai_api_key" id="open_ai_api_key" formControlName="open_ai_api_key">
-  <div *ngIf="open_ai_api_key.invalid && (open_ai_api_key.dirty || open_ai_api_key.touched)">
-    <div *ngIf="open_ai_api_key.errors.required">OpenAI API Key is required.</div>
+    <div *ngIf="aws_region.errors?.required">AWS Region is required.</div>
   </div>
 
-  <button type="submit" [disabled]="apiForm.invalid">Submit</button>
+  <ion-item>
+    <ion-label position="floating">OpenAI API Key:</ion-label>
+    <ion-input type="text" formControlName="open_ai_api_key"></ion-input>
+  </ion-item>
+  <div *ngIf="open_ai_api_key.invalid && (open_ai_api_key.dirty || open_ai_api_key.touched)">
+    <div *ngIf="open_ai_api_key.errors?.required">OpenAI API Key is required.</div>
+  </div>
+
+  <ion-button expand="full" type="submit" [disabled]="apiForm.invalid">Submit</ion-button>
 </form>
