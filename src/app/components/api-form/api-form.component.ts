@@ -25,6 +25,7 @@ export class ApiFormComponent  implements OnInit {
       aws_access_key: ['', [Validators.required]],
       aws_secret: ['', [Validators.required]],
       aws_region: ['', [Validators.required]],
+      aws_s3_bucket_name: ['', [Validators.required]],
       open_ai_api_key: ['', [Validators.required]],
     });
     
@@ -45,6 +46,10 @@ export class ApiFormComponent  implements OnInit {
 
   get open_ai_api_key() {
     return this.apiForm.get('open_ai_api_key');
+  }
+  
+  get aws_s3_bucket_name() {
+    return this.apiForm.get('awz_s3_bucket_name');
   }
   
   onSubmit() {
