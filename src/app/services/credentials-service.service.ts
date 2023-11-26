@@ -32,7 +32,7 @@ export class CredentialsService {
     const encryptedAwsS3BucketName = localStorage.getItem('awsS3BucketName');
     const encryptedOpenAIApiKey = localStorage.getItem('openAIApiKey');
 
-    if (encryptedAwsAccessKey && encryptedAwsSecret && encryptedAwsRegion && encryptedOpenAIApiKey ) {
+    if (encryptedAwsAccessKey && encryptedAwsSecret && encryptedAwsRegion && encryptedAwsS3BucketName && encryptedOpenAIApiKey ) {
       const awsAccessKey = this.decrypt(encryptedAwsAccessKey);
       const awsSecret = this.decrypt(encryptedAwsSecret);
       const awsRegion = this.decrypt(encryptedAwsRegion);
