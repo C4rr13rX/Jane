@@ -32,7 +32,7 @@ export class AIPersonalityFormComponent  implements OnInit {
     
   
   get ai_name() {
-    return this.apiForm.get('ai_name');
+    return this.aiPersonalityForm.get('ai_name');
   }
   
   onSubmit() {
