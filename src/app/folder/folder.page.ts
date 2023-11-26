@@ -25,7 +25,7 @@ export class FolderPage implements OnInit {
   public location!: string;
   public isTrue = true;
   private activatedRoute = inject(ActivatedRoute);
-  constructor(private popoverController: PopoverController, private cdr: ChangeDetectorRef ) {}
+  constructor(private popoverController: PopoverController, private cdr: ChangeDetectorRef, private credentialsService: CredentialsService) {}
 
   ngOnInit() {
     this.folder = this.replaceDashesAndCapitalize(this.activatedRoute.snapshot.paramMap.get('id') as string);
