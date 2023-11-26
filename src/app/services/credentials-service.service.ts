@@ -9,14 +9,20 @@ export class CredentialsService {
   
   constructor() { }
   
-  saveCredentials(username: string, password: string, openaiApiKey: string): void {
-    const encryptedPassword = this.encrypt(password);
-    const encryptedApiKey = this.encrypt(openaiApiKey);
+  saveCredentials(awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string): void {
+    const encryptedAwsAccessKey = this.encrypt(awsAccessKey);
+    const encryptedAwsSecret = this.encrypt(awsSecret);
+    const encryptedAwsRegion = this.encrypt(awsRegion);
+    const encryptedAwsS3BucketName = this.encrypt(awsS3BucketName);
+    const encryptedOpenAIApiKey = this.encrypt(openAIApiKey);
+    
 
     // Save encrypted credentials to local storage
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', encryptedPassword);
-    localStorage.setItem('openaiApiKey', encryptedApiKey);
+    localStorage.setItem('awsAccessKey', encryptedAwsAccessKey);
+    localStorage.setItem('awsSecret', encryptedAwsSecret);
+    localStorage.setItem('awsRegion', encryptedAwsRegion);
+    localStorage.setItem('awsS3BucketName', encryptedAwsS3BucketName);
+    localStorage.setItem('openAIApiKey', encryptedOpenAIApiKey)
   }
   
   getCredentials(): { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string } | null {
