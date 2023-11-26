@@ -56,9 +56,9 @@ export class AIPersonalityFormComponent  implements OnInit {
   }
   
   onSubmit() {
-    if (this.apiForm.valid) {
+    if (this.aiPersonalityForm.valid) {
       // Do something with the form data
-      alert('Form submitted:' + this.apiForm.value);
+      alert('Form submitted:' + this.aiPersonalityForm.value);
     }
   }
 
