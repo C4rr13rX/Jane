@@ -22,6 +22,14 @@
   <div *ngIf="aws_region.invalid && (aws_region.dirty || aws_region.touched)">
     <div *ngIf="aws_region.errors?.required">AWS Region is required.</div>
   </div>
+  
+  <ion-item>
+    <ion-label position="floating">AWS S3 Bucket Name:</ion-label>
+    <ion-input type="text" formControlName="aws_s3_bucket_name"></ion-input>
+  </ion-item>
+  <div *ngIf="aws_s3_bucket_name.invalid && (aws_s3_bucket_name.dirty || aws_s3_bucket_name.touched)">
+    <div *ngIf="aws_s3_bucket_name.errors?.required">AWS S3 Bucket Name is required.</div>
+  </div>
 
   <ion-item>
     <ion-label position="floating">OpenAI API Key:</ion-label>
