@@ -43,7 +43,11 @@ export class FolderPage implements OnInit {
       this.cdr.detectChanges();
     });
     
-    this.credentialsService.getCredentials
+    this.credentials = this.credentialsService.getCredentials();
+    
+    if(this.credentials === null) {
+      this.presentAPIFormPopover();
+    }
     
   }
   
