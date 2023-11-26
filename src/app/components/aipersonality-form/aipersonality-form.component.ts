@@ -27,6 +27,8 @@ export class AIPersonalityFormComponent  implements OnInit {
 
   ngOnInit() {
     
+    this.credentials = credentialsService.getCredebtials();
+    
     this.aiPersonalityForm = this.fb.group({
       ai_name: ['', [Validators.required]],
       ai_culture: ['', [Validators.required]],
@@ -35,6 +37,8 @@ export class AIPersonalityFormComponent  implements OnInit {
       ai_polly_voice: ['', [Validators.required]],
       your_name: ['', [Validators.required]],
     });
+    
+  }
     
   
   get ai_name() {
