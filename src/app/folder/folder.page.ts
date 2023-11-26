@@ -23,7 +23,7 @@ import { CredentialsService } from '../services/credentials-service.service';
 export class FolderPage implements OnInit {
   public folder!: string;
   public location!: string;
-  private credentials!: { awsAccessKey: string, awsSecret: string, awsRegion: string, openAIApiKey: string } | null;
+  private credentials!: { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string } | null;
   public isTrue = true;
   private activatedRoute = inject(ActivatedRoute);
   constructor(private popoverController: PopoverController, private cdr: ChangeDetectorRef, private credentialsService: CredentialsService) {}
