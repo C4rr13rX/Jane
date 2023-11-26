@@ -35,6 +35,26 @@ export class AIPersonalityFormComponent  implements OnInit {
     return this.aiPersonalityForm.get('ai_name');
   }
   
+  get ai_culture() {
+    return this.aiPersonalityForm.get('ai_culture');
+  }
+  
+  get ai_year_born() {
+    return this.aiPersonalityForm.get('ai_year_born');
+  }
+  
+  get ai_pet_names() {
+    return this.aiPersonalityForm.get('ai_pet_names');
+  }
+  
+  get ai_polly_voice() {
+    return this.aiPersonalityForm.get('ai_polly_voice');
+  }
+  
+  get your_name() {
+    return this.aiPersonalityForm.get('your_name');
+  }
+  
   onSubmit() {
     if (this.apiForm.valid) {
       // Do something with the form data
