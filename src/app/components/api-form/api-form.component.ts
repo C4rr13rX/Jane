@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } 
   templateUrl: './api-form.component.html',
   styleUrls: ['./api-form.component.scss'],
   standalone: true,
-  imports[FormsModule, ReactiveFormsModule]
+  imports: [FormsModule, ReactiveFormsModule]
 })
 export class ApiFormComponent  implements OnInit {
   
