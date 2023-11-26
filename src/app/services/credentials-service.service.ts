@@ -19,10 +19,11 @@ export class CredentialsService {
     localStorage.setItem('openaiApiKey', encryptedApiKey);
   }
   
-  getCredentials(): { username: string, password: string, openaiApiKey: string } | null {
-    const username = localStorage.getItem('username');
-    const encryptedPassword = localStorage.getItem('password');
-    const encryptedApiKey = localStorage.getItem('openaiApiKey');
+  getCredentials(): { awsAccessKey: string, awsSecret: string, awsRegion: string, openaiApiKey: string } | null {
+    const encryptedAwsAccessKey = localStorage.getItem('awsAccessKey');
+    const encryptedAwsSecret = localStorage.getItem('awsSecret');
+    const encryptedAwsRegion = localStorage.getItem('awsRegion')
+    const encryptedOpenAIApiKey = localStorage.getItem('openAIApiKey');
 
     if (username && encryptedPassword && encryptedApiKey) {
       const password = this.decrypt(encryptedPassword);
