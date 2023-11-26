@@ -49,7 +49,7 @@ export class ApiFormComponent  implements OnInit {
   }
   
   get aws_s3_bucket_name() {
-    return this.apiForm.get('awz_s3_bucket_name');
+    return this.apiForm.get('aws_s3_bucket_name');
   }
   
   onSubmit() {
