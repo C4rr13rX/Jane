@@ -21,7 +21,7 @@
   <label for="open_ai_api_key">OpenAI API Key:</label>
   <input type="open_ai_api_key" id="open_ai_api_key" formControlName="open_ai_api_key">
   <div *ngIf="open_ai_api_key.invalid && (open_ai_api_key.dirty || open_ai_api_key.touched)">
-    <div *ngIf="open_ai_api_key.errors.required">Open AI API Key is required.</div>
+    <div *ngIf="open_ai_api_key.errors.required">OpenAI API Key is required.</div>
   </div>
 
   <button type="submit" [disabled]="apiForm.invalid">Submit</button>
