@@ -28,7 +28,7 @@ export class CredentialsService {
     if (encryptedAwsAccessKey && encryptedAwsSecret && encryptedAwsRegion && encryptedOpenAIApiKey ) {
       const awsAccessKey = this.decrypt(encryptedAwsAccessKey);
       const awsSecret = this.decrypt(encryptedAwsSecret)
-      const awsRegion = this.decrypt(encrypted AwsRegion)
+      const awsRegion = this.decrypt(encryptedAwsRegion)
       const openAIApiKey = this.decrypt(encryptedOpenAIApiKey);
       
       return { awsAccessKey: awsAccessKey, awsSecret: awsSecret, awsRegion: awsRegion, openAIApiKey: openAIApiKey };
