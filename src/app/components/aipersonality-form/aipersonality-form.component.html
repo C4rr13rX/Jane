@@ -32,12 +32,17 @@
   </div>
 
   <ion-item>
-    <ion-label position="floating">AI AWS Polly Voice:</ion-label>
-    <ion-input type="text" formControlName="ai_polly_voice"></ion-input>
-  </ion-item>
-  <div *ngIf="ai_polly_voice.invalid && (ai_polly_voice.dirty || ai_polly_voice.touched)">
-    <div *ngIf="ai_polly_voice.errors?.required">AI AWS Polly Voice is required.</div>
-  </div>
+  <ion-label position="floating">AI AWS Polly Voice:</ion-label>
+  <ion-select formControlName="ai_polly_voice">
+    <ion-select-option *ngFor="let voice of availableVoices" [value]="voice">
+      {{ voice }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+<div *ngIf="ai_polly_voice.invalid && (ai_polly_voice.dirty || ai_polly_voice.touched)">
+  <div *ngIf="ai_polly_voice.errors?.required">AI AWS Polly Voice is required.</div>
+</div>
+
   
   <ion-item>
     <ion-label position="floating">Your Name:</ion-label>
