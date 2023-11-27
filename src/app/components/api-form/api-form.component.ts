@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonInput, IonButton, IonRouterOutlet } from '@ionic/angular/standalone';
+import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonInput, IonButton, IonRouterOutlet, PopoverController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, colorPaletteOutline, colorPaletteSharp, chatbubblesOutline, chatbubblesSharp } from 'ionicons/icons';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CredentialsService } from '../../services/credentials-service.service';
+import { AIPersonalityFormComponent } from '../aipersonality-form/aipersonality-form.component'
 
 @Component({
   selector: 'app-api-form',
@@ -17,7 +18,7 @@ export class ApiFormComponent  implements OnInit {
   
   apiForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private credentialsService: CredentialsService) { 
+  constructor(private fb: FormBuilder, private credentialsService: CredentialsService, private poppverController: PopoverController) { 
     addIcons({ chatbubblesOutline, chatbubblesSharp, colorPaletteOutline, colorPaletteSharp, paperPlaneOutline, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
 
@@ -51,6 +52,18 @@ export class ApiFormComponent  implements OnInit {
   
   get aws_s3_bucket_name() {
     return this.apiForm.get('aws_s3_bucket_name');
+  }
+  
+  async presentAIPersonalityFormPopover() {
+    const popover = await this.popoverController.create({
+      component: AIPersonalityFormComponent,
+      translucent: true,
+      cssClass: 'aipersonality-form-popover',
+      side: 'top'
+      
+    });
+
+    return await popover.present();
   }
   
   onSubmit() {
