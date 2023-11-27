@@ -4,6 +4,7 @@ import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonN
 import { addIcons } from 'ionicons';
 import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, colorPaletteOutline, colorPaletteSharp, chatbubblesOutline, chatbubblesSharp } from 'ionicons/icons';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CredentialsService } from '../../services/credentials-service.service';
 
 @Component({
   selector: 'app-api-form',
@@ -16,7 +17,7 @@ export class ApiFormComponent  implements OnInit {
   
   apiForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private credentialsService: CredentialsService) { 
     addIcons({ chatbubblesOutline, chatbubblesSharp, colorPaletteOutline, colorPaletteSharp, paperPlaneOutline, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }
 
@@ -55,7 +56,8 @@ export class ApiFormComponent  implements OnInit {
   onSubmit() {
     if (this.apiForm.valid) {
       // Do something with the form data
-      alert('Form submitted:' + this.apiForm.value);
+      this.credentialsService.saveCredentials(this.apiForm.value.aws_access_key, this.apiForm.value.aws_secret, this.apiForm.value.aws_region, this.apiForm.value.aws_s3_bucket_name, this.apiForm.value.open_ai_api_key);
+      
     }
   }
 
