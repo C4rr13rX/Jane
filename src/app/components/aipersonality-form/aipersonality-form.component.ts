@@ -81,5 +81,17 @@ export class AIPersonalityFormComponent  implements OnInit {
       alert('Form submitted:' + this.aiPersonalityForm.value);
     }
   }
+  
+  // Function to get AWS Polly voices
+   async getAwsPollyVoices(): Promise<string[]> {
+          try {
+             const data = await polly.describeVoices().promise();
+             const voices = data.Voices?.map((voice) => voice.Name) || [];
+             return voices;
+      } catch (error) {
+         console.error('Error retrieving AWS Polly voices:', error.message);
+         return [];
+  }
+}
 
 }
