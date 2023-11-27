@@ -48,6 +48,7 @@ export class FolderPage implements OnInit {
     if(this.credentials === null) {
       this.presentAPIFormPopover();
     }
+    isAIP
     
   }
   
