@@ -58,6 +58,7 @@ export class ApiFormComponent  implements OnInit {
       // Do something with the form data
       this.credentialsService.saveCredentials(this.apiForm.value.aws_access_key, this.apiForm.value.aws_secret, this.apiForm.value.aws_region, this.apiForm.value.aws_s3_bucket_name, this.apiForm.value.open_ai_api_key);
       
+      
     }
   }
 
