@@ -93,6 +93,6 @@ export class AIPersonalityFormComponent  implements OnInit {
               console.error('Error retrieving AWS Polly voices:', error.message);
          return [];
        }
-     }
+    }
 
 }
