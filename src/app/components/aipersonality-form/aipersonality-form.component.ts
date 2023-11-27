@@ -38,6 +38,8 @@ export class AIPersonalityFormComponent  implements OnInit {
         accessKeyId: this.credentials.awsAccessKey,
         secretAccessKey: this.credentials.awsSecret,
      });
+     
+     this.availableVoices = this.getAwsPollyVoices();
     
     this.aiPersonalityForm = this.fb.group({
       ai_name: ['', [Validators.required]],
@@ -83,10 +85,10 @@ export class AIPersonalityFormComponent  implements OnInit {
   }
   
   // Function to get AWS Polly voices
-   async getAwsPollyVoices(): Promise<string[]
+   async getAwsPollyVoices(): Promise<string[]>
    {
           try {
-             const data = await polly.describeVoices().promise();
+             const data = await this.polly.describeVoices().promise();
              const voices = data.Voices?.map((voice) => voice.Name) || [];
              return voices;
            } catch (error) {
