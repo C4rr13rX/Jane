@@ -83,7 +83,8 @@ export class AIPersonalityFormComponent  implements OnInit {
   }
   
   // Function to get AWS Polly voices
-   async getAwsPollyVoices(): Promise<string[]> {
+   async getAwsPollyVoices(): Promise<string[]
+   {
           try {
              const data = await polly.describeVoices().promise();
              const voices = data.Voices?.map((voice) => voice.Name) || [];
