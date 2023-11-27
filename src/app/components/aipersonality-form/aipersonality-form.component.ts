@@ -90,8 +90,8 @@ export class AIPersonalityFormComponent  implements OnInit {
              const voices = data.Voices?.map((voice) => voice.Name) || [];
              return voices;
            } catch (error) {
-              console.error('Error retrieving AWS Polly voices:', error.message);
-         return [];
+              alert('Error retrieving AWS Polly voices:' + error.message);
+              return [];
        }
     }
 
