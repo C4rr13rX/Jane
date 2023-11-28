@@ -12,7 +12,7 @@ import { AIPersonalityFormComponent } from '../aipersonality-form/aipersonality-
   templateUrl: './api-form.component.html',
   styleUrls: ['./api-form.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, IonItem, IonLabel, IonInput, IonButton]
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, IonItem, IonLabel, IonInput, IonButton]
 })
 export class ApiFormComponent  implements OnInit {
   
