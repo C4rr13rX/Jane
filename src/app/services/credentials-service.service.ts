@@ -45,7 +45,22 @@ export class CredentialsService {
     return null;
   }
   
-  getAIPersonality(): {ai_name: string, ai_culture: string, ai_year_born: string, ai_pet_names: string, ai_polly_voice: string, your_name: string } {
+  getAIPersonality(): {ai_name: string, ai_culture: string, ai_year_born: string, ai_pet_names: string, ai_polly_voice: string, your_name: string} {
+    
+    const ai_name_encrypted = localStorage.getItem('aiName');
+    const ai_culture_encrypted = localStorage.getItem('aiCulture');
+    const ai_year_born_encrypted = localStorage.getItem('aiYearBorn');
+    const ai_pet_names_encrypted = localStorage.getItem('aiPetNames');
+    const ai_polly_voice_encrypted = localStorage.getItem('aiPollyVoice');
+    const your_name_encrypted = localStorage.getItem('yourName');
+    
+    if (ai_name_encrypted && ai_culture_encrypted && ai_year_born_encrypted && ai_pet_names_encrypted && ai_polly_voice_encrypted && your_name_encrypted ) {
+      const aiName = this.decrypt(encryptedAwsAccessKey);
+      const awsSecret = this.decrypt(encryptedAwsSecret);
+      const awsRegion = this.decrypt(encryptedAwsRegion);
+      const awsS3BucketName = this.decrypt(encryptedAwsS3BucketName)
+      const openAIApiKey = this.decrypt(encryptedOpenAIApiKey);
+    
     
   }
   
