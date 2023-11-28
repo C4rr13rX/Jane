@@ -45,7 +45,7 @@ export class CredentialsService {
     return null;
   }
   
-  getAIPersonality(): {ai_name: string, ai_culture: string, ai_year_born: string, ai_pet_names: string, ai_polly_voice: string, your_name: string} {
+  getAIPersonality(): { ai_name: string, ai_culture: string, ai_year_born: string, ai_pet_names: string, ai_polly_voice: string, your_name: string } | null {
     
     const ai_name_encrypted = localStorage.getItem('aiName');
     const ai_culture_encrypted = localStorage.getItem('aiCulture');
