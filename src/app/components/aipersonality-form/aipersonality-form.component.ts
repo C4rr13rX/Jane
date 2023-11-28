@@ -12,7 +12,7 @@ import { CredentialsService } from '../../services/credentials-service.service';
   templateUrl: './aipersonality-form.component.html',
   styleUrls: ['./aipersonality-form.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, IonItem, IonLabel, IonInput, IonButton, IonSelect]
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, IonItem, IonLabel, IonInput, IonButton, IonSelect]
 })
 export class AIPersonalityFormComponent  implements OnInit {
   
