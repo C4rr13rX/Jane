@@ -64,6 +64,8 @@ export class CredentialsService {
     
   }
   
+  }
+  
   private encrypt(value: string): string {
     const encryptedValue = CryptoJS.AES.encrypt(value, this.key).toString();
     return encryptedValue;
