@@ -17,7 +17,7 @@ import { CredentialsService } from '../../services/credentials-service.service';
 export class AIPersonalityFormComponent  implements OnInit {
   
   aiPersonalityForm!: FormGroup;
-  availableVoices!: [];
+  availableVoices!: string[];
   private polly!: Polly;
   private credentials!: { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string } | null;
   
