@@ -25,22 +25,28 @@ export class CredentialsService {
     localStorage.setItem('openAIApiKey', encryptedOpenAIApiKey)
   }
   
-  getCredentials(): { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string } | null {
+  getCredentials(): Promise<{ awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string } | null> {
+  return new Promise((resolve) => {
     const encryptedAwsAccessKey = localStorage.getItem('awsAccessKey');
     const encryptedAwsSecret = localStorage.getItem('awsSecret');
-    const encryptedAwsRegion = localStorage.getItem('awsRegion')
+    const encryptedAwsRegion = localStorage.getItem('awsRegion');
     const encryptedAwsS3BucketName = localStorage.getItem('awsS3BucketName');
     const encryptedOpenAIApiKey = localStorage.getItem('openAIApiKey');
 
-    if (encryptedAwsAccessKey && encryptedAwsSecret && encryptedAwsRegion && encryptedAwsS3BucketName && encryptedOpenAIApiKey ) {
+    if (encryptedAwsAccessKey && encryptedAwsSecret && encryptedAwsRegion && encryptedAwsS3BucketName && encryptedOpenAIApiKey) {
       const awsAccessKey = this.decrypt(encryptedAwsAccessKey);
       const awsSecret = this.decrypt(encryptedAwsSecret);
       const awsRegion = this.decrypt(encryptedAwsRegion);
-      const awsS3BucketName = this.decrypt(encryptedAwsS3BucketName)
+      const awsS3BucketName = this.decrypt(encryptedAwsS3BucketName);
       const openAIApiKey = this.decrypt(encryptedOpenAIApiKey);
-      
-      return { awsAccessKey: awsAccessKey, awsSecret: awsSecret, awsRegion: awsRegion, awsS3BucketName: awsS3BucketName, openAIApiKey: openAIApiKey };
+
+      resolve({ awsAccessKey, awsSecret, awsRegion, awsS3BucketName, openAIApiKey });
+    } else {
+      resolve(null);
     }
+  });
+}
+
 
     return null;
   }
