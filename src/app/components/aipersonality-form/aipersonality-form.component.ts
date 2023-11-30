@@ -27,19 +27,27 @@ export class AIPersonalityFormComponent  implements OnInit {
 
   ngOnInit() {
     
-    this.credentials = await this.credentialsService.getCredentials();
-    /*
-    
-     { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string }
-    
-    */
-    this.polly = new Polly({
+    this.credentialsService.getCredentials().then(credentials => {
+      this.credentials = credentials;
+      
+      this.polly = new Polly({
         region: this.credentials?.awsRegion,
         accessKeyId: this.credentials?.awsAccessKey,
         secretAccessKey: this.credentials?.awsSecret,
      });
      
-     this.availableVoices = await this.getAwsPollyVoices();
+    });
+    /*
+    
+     { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string }
+    
+    */
+    
+     
+     this.getAwsPollyVoices().then(voices => {
+       this.availableVoices = voices;
+     });
+
     
     this.aiPersonalityForm = this.fb.group({
       ai_name: ['', [Validators.required]],
