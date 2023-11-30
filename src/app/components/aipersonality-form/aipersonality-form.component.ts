@@ -27,7 +27,7 @@ export class AIPersonalityFormComponent  implements OnInit {
 
   ngOnInit() {
     
-    this.credentials = credentialsService.getCredentials();
+    this.credentials = this.credentialsService.getCredentials();
     /*
     
      { awsAccessKey: string, awsSecret: string, awsRegion: string, awsS3BucketName: string, openAIApiKey: string }
