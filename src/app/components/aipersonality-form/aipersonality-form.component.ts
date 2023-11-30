@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonInput, IonButton, IonRouterOutlet, IonSelect, PopoverController } from '@ionic/angular/standalone';
+import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonInput, IonButton, IonRouterOutlet, IonSelect, IonSelectOption, PopoverController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, bookOutline, bookSharp, codeSlashOutline, codeSlashSharp, colorPaletteOutline, colorPaletteSharp, chatbubblesOutline, chatbubblesSharp } from 'ionicons/icons';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,7 +12,7 @@ import { CredentialsService } from '../../services/credentials-service.service';
   templateUrl: './aipersonality-form.component.html',
   styleUrls: ['./aipersonality-form.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, IonItem, IonLabel, IonInput, IonButton, IonSelect]
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, IonItem, IonLabel, IonInput, IonButton, IonSelect, IonSelectOption]
 })
 export class AIPersonalityFormComponent  implements OnInit {
   
