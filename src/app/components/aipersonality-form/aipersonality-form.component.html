@@ -4,7 +4,7 @@
     <ion-input type="text" formControlName="ai_name"></ion-input>
   </ion-item>
   <div *ngIf="ai_name?.invalid && (ai_name?.dirty || ai_name?.touched)">
-    <div *ngIf="ai_name?.errors?.required">AI Name is required.</div>
+    <div *ngIf="ai_name?.errors?.['required']">AI Name is required.</div>
   </div>
 
   <ion-item>
@@ -12,7 +12,7 @@
     <ion-input type="text" formControlName="ai_culture"></ion-input>
   </ion-item>
   <div *ngIf="ai_culture?.invalid && (ai_culture?.dirty || ai_culture?.touched)">
-    <div *ngIf="ai_culture?.errors?.required">AI Culture is required.</div>
+    <div *ngIf="ai_culture?.errors?.['required']">AI Culture is required.</div>
   </div>
 
   <ion-item>
@@ -20,7 +20,7 @@
     <ion-input type="text" formControlName="ai_year_born"></ion-input>
   </ion-item>
   <div *ngIf="ai_year_born?.invalid && (ai_year_born?.dirty || ai_year_born?.touched)">
-    <div *ngIf="ai_year_born?.errors?.required">AI Year Born is required.</div>
+    <div *ngIf="ai_year_born?.errors?.['required']">AI Year Born is required.</div>
   </div>
   
   <ion-item>
@@ -28,7 +28,7 @@
     <ion-input type="text" formControlName="ai_pet_names"></ion-input>
   </ion-item>
   <div *ngIf="ai_pet_names?.invalid && (ai_pet_names?.dirty || ai_pet_names?.touched)">
-    <div *ngIf="ai_pet_names?.errors?.required">AI Pet Names is required.</div>
+    <div *ngIf="ai_pet_names?.errors?.['required']">AI Pet Names is required.</div>
   </div>
 
   <ion-item>
@@ -40,7 +40,7 @@
     </ion-select>
   </ion-item>
   <div *ngIf="ai_polly_voice?.invalid && (ai_polly_voice?.dirty || ai_polly_voice?.touched)">
-    <div *ngIf="ai_polly_voice?.errors?.required">AI AWS Polly Voice is required.</div>
+    <div *ngIf="ai_polly_voice?.errors?.['required']">AI AWS Polly Voice is required.</div>
   </div>
 
   <ion-item>
@@ -48,10 +48,11 @@
     <ion-input type="text" formControlName="your_name"></ion-input>
   </ion-item>
   <div *ngIf="your_name?.invalid && (your_name?.dirty || your_name?.touched)">
-    <div *ngIf="your_name?.errors?.required">Your Name is required.</div>
+    <div *ngIf="your_name?.errors?.['required']">Your Name is required.</div>
   </div>
 
   <ion-button expand="full" type="submit" [disabled]="aiPersonalityForm.invalid">Submit</ion-button>
 </form>
+
 
 
