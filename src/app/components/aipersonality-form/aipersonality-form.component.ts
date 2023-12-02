@@ -97,14 +97,15 @@ export class AIPersonalityFormComponent  implements OnInit {
   try {
     const data = await this.polly.describeVoices().promise();
     const voices = (data.Voices || [])
-      .filter((voice) => voice?.Name) // Filter out undefined or null values
-      .map((voice) => voice!.Name); // Use non-null assertion to tell TypeScript that it's a valid string
+      .filter((voice): voice is { Name: string } => voice?.Name !== undefined) // Type guard to ensure Name is a string
+      .map((voice) => voice.Name); // Now TypeScript knows voice.Name is definitely a string
     return voices;
   } catch (error) {
     alert('Error retrieving AWS Polly voices: ' + (error as Error).message);
     return [];
   }
 }
+
 
 
 }
